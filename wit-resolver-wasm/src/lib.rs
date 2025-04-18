@@ -1,14 +1,38 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+mod bindings;
+
+use std::cell::RefCell;
+
+use bindings::exports::eastpole::wit_resolver::types::{Guest, GuestResolver};
+use wit_parser::Resolve;
+
+struct WitResolver {
+    resolve: RefCell<Resolve>,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+impl GuestResolver for WitResolver {
+    fn new() -> Self {
+        Self {
+            resolve: RefCell::new(Resolve::new()),
+        }
+    }
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn resolve(&self) -> Result<String, String> {
+        Ok(serde_json::to_string(&self.resolve).unwrap())
+    }
+
+    fn register(&self, path: String, wit: String) -> Result<(), String> {
+        let mut resolve = self.resolve.borrow_mut();
+        match resolve.push_str(path, wit.as_str()) {
+            Ok(_) => Ok(()),
+            Err(e) => Err(format!("Failed to register: {}", e)),
+        }
     }
 }
+
+struct Implementation;
+
+impl Guest for Implementation {
+    type Resolver = WitResolver;
+}
+
+bindings::export!(Implementation with_types_in bindings);

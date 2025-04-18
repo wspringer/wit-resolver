@@ -1,0 +1,13 @@
+package eastpole:wit-resolver@0.1.0;
+
+interface types {
+    resource resolver {
+        constructor();
+        resolve: func() -> result<string, string>;
+        register: func(path: string, wit: string) -> result<_, string>;
+    }
+}
+
+world calculator {
+    export types;
+}
