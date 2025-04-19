@@ -13,6 +13,10 @@ wit-parser = { version = "0.229.0", features = ["serde"] }
 crate-type = ["cdylib"]
 
 [package.metadata.component]
-package = "docs:rpn"
+package = "eastpole:wit-resolver"
 
 [package.metadata.component.dependencies]
+
+[package.metadata.component.target]
+path = "wit/world.wit"
+world = "wit-resolver"

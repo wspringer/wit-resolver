@@ -500,7 +500,7 @@ mod _rt {
 /// ```
 #[allow(unused_macros)]
 #[doc(hidden)]
-macro_rules! __export_calculator_impl {
+macro_rules! __export_wit_resolver_impl {
     ($ty:ident) => {
         self::export!($ty with_types_in self);
     };
@@ -511,22 +511,22 @@ macro_rules! __export_calculator_impl {
     };
 }
 #[doc(inline)]
-pub(crate) use __export_calculator_impl as export;
+pub(crate) use __export_wit_resolver_impl as export;
 #[cfg(target_arch = "wasm32")]
 #[unsafe(
-    link_section = "component-type:wit-bindgen:0.41.0:eastpole:wit-resolver@0.1.0:calculator:encoded world"
+    link_section = "component-type:wit-bindgen:0.41.0:eastpole:wit-resolver@0.1.0:wit-resolver:encoded world"
 )]
 #[doc(hidden)]
 #[allow(clippy::octal_escapes)]
-pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 372] = *b"\
-\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07\xf3\x01\x01A\x02\x01\
+pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 376] = *b"\
+\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07\xf5\x01\x01A\x02\x01\
 A\x02\x01B\x0b\x04\0\x08resolver\x03\x01\x01i\0\x01@\0\0\x01\x04\0\x15[construct\
 or]resolver\x01\x02\x01h\0\x01j\x01s\x01s\x01@\x01\x04self\x03\0\x04\x04\0\x18[m\
 ethod]resolver.resolve\x01\x05\x01j\0\x01s\x01@\x03\x04self\x03\x04paths\x03wits\
 \0\x06\x04\0\x19[method]resolver.register\x01\x07\x04\0!eastpole:wit-resolver/ty\
-pes@0.1.0\x05\0\x04\0&eastpole:wit-resolver/calculator@0.1.0\x04\0\x0b\x10\x01\0\
-\x0acalculator\x03\0\0\0G\x09producers\x01\x0cprocessed-by\x02\x0dwit-component\x07\
-0.227.1\x10wit-bindgen-rust\x060.41.0";
+pes@0.1.0\x05\0\x04\0(eastpole:wit-resolver/wit-resolver@0.1.0\x04\0\x0b\x12\x01\
+\0\x0cwit-resolver\x03\0\0\0G\x09producers\x01\x0cprocessed-by\x02\x0dwit-compon\
+ent\x070.227.1\x10wit-bindgen-rust\x060.41.0";
 #[inline(never)]
 #[doc(hidden)]
 pub fn __link_custom_section_describing_imports() {

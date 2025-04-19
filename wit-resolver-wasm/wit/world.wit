@@ -8,6 +8,6 @@ interface types {
     }
 }
 
-world calculator {
+world wit-resolver {
     export types;
 }
