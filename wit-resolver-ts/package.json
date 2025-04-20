@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test": "vitest",
     "jco": "jco transpile ../wit-resolver-wasm/target/wasm32-wasip1/release/wit_resolver_wasm.wasm  -o src",
     "copy-files": "copyfiles -u 1 \"src/**/*.{js,d.ts,wasm}\" dist",
     "build": "tsc && npm run copy-files",
@@ -17,13 +17,13 @@
   "dependencies": {
     "@bytecodealliance/preview2-shim": "^0.17.2",
     "jest": "^29.7.0",
-    "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@bytecodealliance/jco": "^1.10.2",
     "@types/jest": "^29.5.14",
-    "copyfiles": "^2.4.1"
+    "copyfiles": "^2.4.1",
+    "vitest": "^3.1.1"
   }
 }
