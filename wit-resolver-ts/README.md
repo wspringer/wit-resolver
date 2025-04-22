@@ -28,40 +28,23 @@ const resolved = resolver.resolver();
 This produces a `Resolved` object (see the [Type Definitions](#type-definitions)
 down below) that in this cases resembles something like this:
 
+<!-- prettier-ignore -->
 ```json
 {
   "interfaces": [
     {
-      "functions": {
-        "bar": {
-          "kind": "freestanding",
-          "name": "bar",
-          "params": [],
-          "result": 0
-        }
-      },
+      "functions": { "bar": {"kind": "freestanding", "name": "bar", "params": [], "result": 0} },
       "name": "foo",
       "package": 0,
       "types": {}
     }
   ],
   "packages": [
-    {
-      "interfaces": {
-        "foo": 0
-      },
-      "name": "local:test",
-      "worlds": {}
-    }
+    { "interfaces": {"foo": 0}, "name": "local:test", "worlds": {} }
   ],
   "types": [
     {
-      "kind": {
-        "result": {
-          "err": "string",
-          "ok": "string"
-        }
-      },
+      "kind": { "result": {"err": "string", "ok": "string"} },
       "name": null,
       "owner": null
     }
