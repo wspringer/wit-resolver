@@ -7,12 +7,10 @@
     "test": "vitest",
     "jco": "jco transpile ../wit-resolver-wasm/target/wasm32-wasip1/release/wit_resolver_wasm.wasm  -o src",
     "copy-files": "copyfiles -u 1 \"src/**/*.{js,d.ts,wasm}\" dist",
-    "build": "tsc && npm run copy-files",
-    "start": "node --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' src/index.ts",
-    "readme": "runmd README.js.md"
-  },
-  "keywords": [],
-  "author": "",
+    "build": "tsc && npm run copy-files"
+    },
+  "keywords": ["wasm", "wit"],
+  "author": "Wilfred Springer <wilfred@eastpole.com>",
   "license": "MIT",
   "description": "A TypeScript library to resolve WIT files into a TypeScript data structure",
   "dependencies": {
