@@ -70,7 +70,6 @@ down below) that in this cases resembles something like this:
 }
 ```
 
-<a name="type-definitions"/>
 ## Type Definitions
 
 ```typescript
