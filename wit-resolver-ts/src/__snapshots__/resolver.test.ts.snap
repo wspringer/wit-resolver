@@ -1,0 +1,515 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Resolver > should allow you define a world 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "bar": {
+          "kind": "freestanding",
+          "name": "bar",
+          "params": [],
+          "result": 0,
+        },
+      },
+      "name": "foo-items",
+      "package": 0,
+      "types": {},
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo-items": 0,
+      },
+      "name": "local:test",
+      "worlds": {
+        "foo": 0,
+      },
+    },
+  ],
+  "types": [
+    {
+      "kind": {
+        "list": "string",
+      },
+      "name": null,
+      "owner": null,
+    },
+  ],
+  "worlds": [
+    {
+      "exports": {},
+      "imports": {
+        "interface-0": {
+          "interface": {
+            "id": 0,
+          },
+        },
+      },
+      "name": "foo",
+      "package": 0,
+    },
+  ],
+}
+`;
+
+exports[`Resolver > should allow you to use nested packages 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "bar": {
+          "kind": "freestanding",
+          "name": "bar",
+          "params": [],
+          "result": 0,
+        },
+      },
+      "name": "foo-items",
+      "package": 0,
+      "types": {},
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo-items": 0,
+      },
+      "name": "foo:bar",
+      "worlds": {},
+    },
+    {
+      "interfaces": {},
+      "name": "local:test",
+      "worlds": {
+        "foo": 0,
+      },
+    },
+  ],
+  "types": [
+    {
+      "kind": {
+        "list": "string",
+      },
+      "name": null,
+      "owner": null,
+    },
+  ],
+  "worlds": [
+    {
+      "exports": {},
+      "imports": {
+        "interface-0": {
+          "interface": {
+            "id": 0,
+          },
+        },
+      },
+      "name": "foo",
+      "package": 1,
+    },
+  ],
+}
+`;
+
+exports[`Resolver > should handle an empty interface 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {},
+      "name": "foo",
+      "package": 0,
+      "types": {},
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should handle an interface with a function accepting a result 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "bar": {
+          "kind": "freestanding",
+          "name": "bar",
+          "params": [
+            {
+              "name": "a",
+              "type": 0,
+            },
+          ],
+        },
+      },
+      "name": "foo",
+      "package": 0,
+      "types": {},
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [
+    {
+      "kind": {
+        "result": {
+          "err": "string",
+          "ok": "string",
+        },
+      },
+      "name": null,
+      "owner": null,
+    },
+  ],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should handle an interface with a function returning a result 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "bar": {
+          "kind": "freestanding",
+          "name": "bar",
+          "params": [],
+          "result": 0,
+        },
+      },
+      "name": "foo",
+      "package": 0,
+      "types": {},
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [
+    {
+      "kind": {
+        "result": {
+          "err": "string",
+          "ok": "string",
+        },
+      },
+      "name": null,
+      "owner": null,
+    },
+  ],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should handle an interface with a function returning a string 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "bar": {
+          "kind": "freestanding",
+          "name": "bar",
+          "params": [],
+          "result": "string",
+        },
+      },
+      "name": "foo",
+      "package": 0,
+      "types": {},
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should handle an interface with a function returning unit 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "bar": {
+          "kind": "freestanding",
+          "name": "bar",
+          "params": [],
+        },
+      },
+      "name": "foo",
+      "package": 0,
+      "types": {},
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should handle an interface with a resource 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "[constructor]bar": {
+          "kind": {
+            "constructor": 0,
+          },
+          "name": "[constructor]bar",
+          "params": [
+            {
+              "name": "a",
+              "type": "string",
+            },
+          ],
+          "result": 1,
+        },
+      },
+      "name": "foo",
+      "package": 0,
+      "types": {
+        "bar": 0,
+      },
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [
+    {
+      "kind": "resource",
+      "name": "bar",
+      "owner": {
+        "interface": 0,
+      },
+    },
+    {
+      "kind": {
+        "handle": {
+          "own": 0,
+        },
+      },
+      "name": null,
+      "owner": null,
+    },
+  ],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should handle an interface with a resource with a method 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "[method]bar.baz": {
+          "kind": {
+            "method": 0,
+          },
+          "name": "[method]bar.baz",
+          "params": [
+            {
+              "name": "self",
+              "type": 1,
+            },
+          ],
+        },
+      },
+      "name": "foo",
+      "package": 0,
+      "types": {
+        "bar": 0,
+      },
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [
+    {
+      "kind": "resource",
+      "name": "bar",
+      "owner": {
+        "interface": 0,
+      },
+    },
+    {
+      "kind": {
+        "handle": {
+          "borrow": 0,
+        },
+      },
+      "name": null,
+      "owner": null,
+    },
+  ],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should handle an interface with a resource with a static method 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {
+        "[static]bar.baz": {
+          "kind": {
+            "static": 0,
+          },
+          "name": "[static]bar.baz",
+          "params": [],
+        },
+      },
+      "name": "foo",
+      "package": 0,
+      "types": {
+        "bar": 0,
+      },
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [
+    {
+      "kind": "resource",
+      "name": "bar",
+      "owner": {
+        "interface": 0,
+      },
+    },
+  ],
+  "worlds": [],
+}
+`;
+
+exports[`Resolver > should support all of the type definitions (enums, variants, etc.) 1`] = `
+{
+  "interfaces": [
+    {
+      "functions": {},
+      "name": "foo",
+      "package": 0,
+      "types": {
+        "bar": 0,
+        "baz": 1,
+        "foo": 2,
+        "foos": 3,
+      },
+    },
+  ],
+  "packages": [
+    {
+      "interfaces": {
+        "foo": 0,
+      },
+      "name": "local:test",
+      "worlds": {},
+    },
+  ],
+  "types": [
+    {
+      "kind": {
+        "enum": {
+          "cases": [
+            {
+              "name": "baz",
+            },
+            {
+              "name": "qux",
+            },
+          ],
+        },
+      },
+      "name": "bar",
+      "owner": {
+        "interface": 0,
+      },
+    },
+    {
+      "kind": {},
+      "name": "baz",
+      "owner": {
+        "interface": 0,
+      },
+    },
+    {
+      "kind": {
+        "option": "string",
+      },
+      "name": "foo",
+      "owner": {
+        "interface": 0,
+      },
+    },
+    {
+      "kind": {
+        "list": 2,
+      },
+      "name": "foos",
+      "owner": {
+        "interface": 0,
+      },
+    },
+  ],
+  "worlds": [],
+}
+`;

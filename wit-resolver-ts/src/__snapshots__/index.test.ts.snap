@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Resolver > should allow you to resolve wit 1`] = `"{"worlds":[],"interfaces":[{"name":"foo","types":{},"functions":{},"package":0}],"types":[],"packages":[{"name":"local:test","interfaces":{"foo":0},"worlds":{}}]}"`;
