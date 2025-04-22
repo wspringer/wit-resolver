@@ -1,6 +1,6 @@
 {
   "name": "wit-resolver-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
@@ -8,8 +8,11 @@
     "jco": "jco transpile ../wit-resolver-wasm/target/wasm32-wasip1/release/wit_resolver_wasm.wasm  -o src",
     "copy-files": "copyfiles -u 1 \"src/**/*.{js,d.ts,wasm}\" dist",
     "build": "tsc && npm run copy-files"
-    },
-  "keywords": ["wasm", "wit"],
+  },
+  "keywords": [
+    "wasm",
+    "wit"
+  ],
   "author": "Wilfred Springer <wilfred@eastpole.com>",
   "license": "MIT",
   "description": "A TypeScript library to resolve WIT files into a TypeScript data structure",
