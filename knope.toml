@@ -1,0 +1,7 @@
+[packages.wit-resolver-ts]
+versioned_files = ["wit-resolver-ts/package.json"]
+changelog = "wit-resolver-ts/CHANGELOG.md"
+
+[packages.wit-resolver-wasm]
+versioned_files = ["wit-resolver-wasm/Cargo.toml"]
+changelog = "wit-resolver-wasm/CHANGELOG.md"
