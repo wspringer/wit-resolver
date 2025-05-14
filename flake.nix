@@ -4,12 +4,16 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, rust-overlay }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ rust-overlay.overlays.default ];
+        };
       in
       {
         devShells.default = pkgs.mkShell {
@@ -17,9 +21,11 @@
             # Build tools
             just
             nodejs_20
-            rustc
-            cargo
-            wasm32-wasi-toolchain
+            git
+            (rust-bin.stable.latest.default.override {
+              extensions = [ "rust-src" ];
+              targets = [ "wasm32-wasip1" ];
+            })
 
             # Development tools
             rust-analyzer
@@ -29,10 +35,6 @@
           shellHook = ''
             # Ensure we're using the correct Node.js version
             export PATH="${pkgs.nodejs_20}/bin:$PATH"
-
-            # Set up Rust for WASM
-            export RUST_TARGET_PATH="${pkgs.rustc}/lib/rustlib"
-            export RUSTFLAGS="-C target-feature=+crt-static"
           '';
         };
       });
