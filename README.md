@@ -17,20 +17,26 @@ the corresponding documentation [here](./wit-resolver-ts/README.md).
 
 ### Prerequisites
 
-- Node.js and npm
-- Rust and Cargo
-- [just](https://github.com/casey/just) command runner
+- [Nix](https://nixos.org/download.html) package manager
+- [direnv](https://direnv.net/) (optional, but recommended)
 
 ### Build Steps
 
-1. Install dependencies:
+1. Enter the development shell:
+
+   ```bash
+   nix develop
+   ```
+
+   Or if you're using direnv, just `cd` into the project directory.
+
+2. Install dependencies:
 
    ```bash
    just install
    ```
 
-2. Build the project:
-
+3. Build the project:
    ```bash
    just build
    ```
