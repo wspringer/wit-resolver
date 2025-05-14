@@ -6,7 +6,7 @@ describe("Resolver", () => {
   const resolve = (
     wit: string
   ): [object, ReturnType<typeof ResolvedSchema.safeParse>] => {
-    const resolver = Resolver();
+    const resolver = Resolver.create();
     resolver.register("test.wit", wit);
     const raw = resolver.raw();
     return [raw, ResolvedSchema.safeParse(raw)];

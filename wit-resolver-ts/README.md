@@ -11,7 +11,7 @@ This is work in progress, however, this is how you would typically use it:
 ```typescript
 import { Resolver } from "wit-resolver-ts";
 
-const resolver = Resolver();
+const resolver = Resolver.create();
 resolver.register(
   "test.wit",
   `

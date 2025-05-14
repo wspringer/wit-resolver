@@ -1,0 +1,18 @@
+# Build the TypeScript package
+build:
+    npm run build
+
+# Clean build artifacts
+clean:
+    rm -rf dist
+
+# Run tests
+test:
+    npm test
+
+# Install dependencies
+install:
+    npm install
+
+# Default recipe
+default: build
