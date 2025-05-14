@@ -46,6 +46,11 @@
             if [ -s "$HOME/.scm_breeze/scm_breeze.sh" ]; then
               source "$HOME/.scm_breeze/scm_breeze.sh"
             fi
+
+            ggpush() {
+              git push origin "$(git rev-parse --abbrev-ref HEAD)"
+            }
+            export -f ggpush
           '';
         };
       });
