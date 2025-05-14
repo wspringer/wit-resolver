@@ -1,0 +1,14 @@
+{
+  "name": "wit-resolver",
+  "private": true,
+  "scripts": {
+    "build:wasm": "cd wit-resolver-wasm && cargo build --release --target wasm32-wasip1",
+    "build:ts": "cd wit-resolver-ts && npm run build",
+    "build": "npm run build:wasm && npm run build:ts",
+    "clean": "rm -rf wit-resolver-ts/dist wit-resolver-wasm/target",
+    "test": "cd wit-resolver-ts && npm test"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -1,0 +1,14 @@
+# Build the WASM package
+build:
+    cargo build --release --target wasm32-wasip1
+
+# Clean build artifacts
+clean:
+    rm -rf target
+
+# Run tests
+test:
+    cargo test
+
+# Default recipe
+default: build
