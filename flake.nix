@@ -36,10 +36,16 @@
             # Ensure we're using the correct Node.js version
             export PATH="${pkgs.nodejs_20}/bin:$PATH"
 
-            ggpush() {
-              git push origin "$(git rev-parse --abbrev-ref HEAD)"
-            }
-            export -f ggpush
+            # Set up SCM Breeze
+            if [ ! -d "$HOME/.scm_breeze" ]; then
+              git clone https://github.com/scmbreeze/scm_breeze.git "$HOME/.scm_breeze"
+              "$HOME/.scm_breeze/install.sh"
+            fi
+
+            # Source SCM Breeze if it exists
+            if [ -s "$HOME/.scm_breeze/scm_breeze.sh" ]; then
+              source "$HOME/.scm_breeze/scm_breeze.sh"
+            fi
           '';
         };
       });
