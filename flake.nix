@@ -35,6 +35,11 @@
           shellHook = ''
             # Ensure we're using the correct Node.js version
             export PATH="${pkgs.nodejs_20}/bin:$PATH"
+
+            ggpush() {
+              git push origin "$(git rev-parse --abbrev-ref HEAD)"
+            }
+            export -f ggpush
           '';
         };
       });
